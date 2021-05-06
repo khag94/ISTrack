@@ -73,7 +73,7 @@ public class TaskCompletionPage extends TestBase{
 	public WebElement EndofProvisioning;
 	
 	@FindBy(linkText = "Engage POCM Team")
-	public WebElement EngagePOCMTeamTask;
+	public WebElement EngagePOCMTeam;
 	
 	@FindBy(linkText = "Capture Estimated Ship Date")
 	public WebElement CaptureEstimatedShipDate;
@@ -83,6 +83,12 @@ public class TaskCompletionPage extends TestBase{
 	
 	@FindBy(linkText = "Complete Service Acceptance Test")
 	public WebElement CompleteServiceAcceptanceTest;
+	
+	@FindBy(linkText = "Create Oracle PR") //added by kp
+	public WebElement CreateOraclePR;
+	
+	@FindBy(linkText  = "Raise Clarify PO")	//added by kp
+	public WebElement RaiseClarifyPO;
 	
 	@FindBy(name = "PegaGadget0Ifr")
 	public WebElement C_Frame;
@@ -114,7 +120,8 @@ public class TaskCompletionPage extends TestBase{
 	@FindBy(xpath = "//input[@id='SvcQuoteRef1']")
 	public WebElement ServiceQuoteRef;
 	
-	@FindBy(xpath = "//select[contains(@name,'pIsSiteIdCreated')]")
+	//@FindBy(xpath = "//select[contains(@name,'pIsSiteIdCreated')]")
+	@FindBy(xpath = "//select[contains(@id,'IsSiteIdCreated')]")
 	public WebElement SiteIdCreated;
 	
 	@FindBy(xpath = "//input[contains(@name,'pActualDelDate')]")
@@ -122,6 +129,9 @@ public class TaskCompletionPage extends TestBase{
 	
 	@FindBy(xpath = "(//span[@id='close'])[2]")
 	public WebElement Close2;
+	
+	@FindBy(xpath = "//input[@id='OraclePRRef1']")
+	public WebElement PurchaseRequisitionRef;
 	
 	
 	@FindBy(id = "SvcContractNum1")
@@ -174,6 +184,9 @@ public class TaskCompletionPage extends TestBase{
 	
 	@FindBy(id = "IsPODAttachedEPtrue")
 	public WebElement IsPODAttachedEPtrue;
+	
+	@FindBy(xpath = "//input[@id='MACHXPORef1']")	//new added
+	public WebElement MachxCaseRef;
 	
 	@FindBy(xpath = "(//span[contains(@class,'textIn')])[2]")
 	public WebElement DownButton;
@@ -270,6 +283,15 @@ public class TaskCompletionPage extends TestBase{
 	@FindBy(id = "CustomerDisputefalse")
 	public WebElement CustomerDisputefalse;
 	
+	@FindBy(id = "IsPOSharedWithOCDtrue")	//added by kp
+	public WebElement IsPOSharedWithOCDtrue;
+	
+	@FindBy(id = "IsReceiptCompletedtrue")
+	public WebElement IsReceiptCompletedtrue;	//added by kp
+	
+	@FindBy(id = "//input[@id='HasSIAttachedSRFtrue']") //new added
+	public WebElement HasSIAttachedSRFtrue;
+	
 	@FindBy(xpath = "//div[contains(text(),'Check for SCN updates')]")
 	public WebElement CheckForSCNUpdates;
 	
@@ -342,11 +364,20 @@ public class TaskCompletionPage extends TestBase{
 	@FindBy(xpath = "//input[@class='autocomplete_input highlight']")
 	public WebElement VendorName;
 	
+	@FindBy(xpath = "//input[@id='VendorSalesOrderRef1']") //new added
+	public WebElement VendorRef;
+	
+	@FindBy(xpath = "//input[@id='SvcContractNum1']")	//new added
+	public WebElement ServiceContract;
+	
 	@FindBy(xpath = "//input[@id='EndDate1']")
 	public WebElement EndDate;
 	
 	@FindBy(xpath = "//input[@id='ClarifyRef1']")
 	public WebElement ClarifyRef;
+	
+	@FindBy(xpath = "//input[@id='ClarifyPORef1']")	//new added
+	public WebElement ClarifyPORef;
 	
 	@FindBy(xpath = "//input[@id='DispatchRef1']")
 	public WebElement DispatchRef;
@@ -437,12 +468,13 @@ public class TaskCompletionPage extends TestBase{
 		windowhelper.switchToParentWindow();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 20);
 		EquipmentMargin.sendKeys("123");
+		Thread.sleep(2000);
 		VBSMargin.sendKeys("123");
 		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(5000);
-		Submit.click();// submit for revise TDD
-		Thread.sleep(3000);
+		//Submit.click();// submit for revise TDD
+		//Thread.sleep(3000);
 	}
 	public void validateOnlineIntervention() throws InterruptedException
 	{
@@ -457,8 +489,24 @@ public class TaskCompletionPage extends TestBase{
 		Submit.click();
 		Thread.sleep(5000);
 		Submit.click();
-		
 	}
+	
+	public void validateEAMManaged() throws InterruptedException	//new function added
+	{
+		Thread.sleep(10000);
+		windowhelper.switchToParentWindow();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 20);
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(5000);
+		dropdownhelper.selectUsingVisibleText(SiteIdCreated,"Yes");
+		Thread.sleep(5000);
+		SiteIdRefNumber.sendKeys("Site123");
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(9000);
+	}
+	
 	public void rejectEquipmentProcurement() throws InterruptedException
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
@@ -513,28 +561,33 @@ public class TaskCompletionPage extends TestBase{
 		CreateVendorWebsiteOrder.click();
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		Thread.sleep(2000);
 		VendorOrderRef.sendKeys("Vendor123");
 		ServiceQuoteRef.sendKeys("Service123");
+		Thread.sleep(3000);
 		Submit.click();
 		//IsSORSellPricetrue.click();
 		//Thread.sleep(3000);
 		//IsAlignedtrue.click();
 		//Thread.sleep(3000);
 		//IsEqualCodetrue.click();
-		//Thread.sleep(3000);
+		Thread.sleep(5000);
 		OraclePRRef1.sendKeys("123");
 		Submit.click();
+		Thread.sleep(5000);
 		PORef1.sendKeys("123");
 		Submit.click();
 		Thread.sleep(7000);
 		Submit.click();
 		Thread.sleep(7000);
 		ConfirmVendorSalesOrderRef.sendKeys("123");
+		Thread.sleep(3000);
 		Submit.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
+		Thread.sleep(10000);
 		Close2.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 	
 	public void coBrandEnrollment() throws InterruptedException
@@ -612,12 +665,33 @@ public class TaskCompletionPage extends TestBase{
 		StagingRequestNumber.sendKeys("123");
 		Submit.click();
 		IsStaggingCompletedtrue.click();
+		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(15000);
 		driver.switchTo().defaultContent();
 		Close2.click();
 		Thread.sleep(13000);
 	}
+	
+	public void warehouseStagingEAMManaged() throws InterruptedException		//new function added
+	{
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
+		EngageForstaging.click();
+		Thread.sleep(3000);
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		//StagingRequestNumber.sendKeys("123");
+		Submit.click();
+		Thread.sleep(3000);
+		IsStaggingCompletedtrue.click();
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(15000);
+		driver.switchTo().defaultContent();
+		Close2.click();
+		Thread.sleep(13000);
+	}
+	
 	public void trackWarehouseDelivery() throws ParseException, InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		
@@ -636,10 +710,9 @@ public class TaskCompletionPage extends TestBase{
 		setAfterDate_New(DelayedEndDate);
 		Submit.click();
 		Thread.sleep(13000);
+		
 		driver.switchTo().defaultContent();
 		searchCase();
-		
-		
 		Thread.sleep(30000);
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 30);
 		ActionsLink.click();
@@ -697,7 +770,7 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(7000);
 		driver.switchTo().defaultContent();
 		Close2.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		/*
 		
 		//javascripthelper.scrollIntoView(DownButton);
@@ -721,6 +794,49 @@ public class TaskCompletionPage extends TestBase{
 			*/
 	}
 	
+	//new function added
+	public void trackWarehouseDeliveryEAMManaged() throws ParseException, InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
+	{
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
+		EngageShipment.click();
+		alerthelper.acceptAlertIfPresent();
+		Thread.sleep(3000);		
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		ShipmentRequestNumber.sendKeys("123");
+		Submit.click();
+		Thread.sleep(13000);		
+		CarrierName.sendKeys("DHL");
+		AirwayBillRef.sendKeys("987");
+		setCurrentDate(Date1);//ship out date
+		//setAfterDate(Date2);// Actual Delivery date must be after ship out date
+		setAfterDate_New(ActualDelDate);
+		Thread.sleep(10000);
+		IsPODAttachedTWHtrue.click();
+		Thread.sleep(15000);
+		
+		javascripthelper.scrollhorizontally();
+		Thread.sleep(13000);
+		AttachmentImage.click();
+		Thread.sleep(15000);
+		//new code
+		dropdownhelper.MoveToTaskandClick(AddButton);
+		Thread.sleep(15000);
+		Attach.click();
+		Thread.sleep(3000);
+		FileName.sendKeys(TestFile);
+		Thread.sleep(13000);
+		dropdownhelper.selectUsingVisibleText(Category, "Customer POD");
+		Thread.sleep(3000);
+		ModalSubmit.click();
+		Thread.sleep(14000);
+		Submit.click();
+		Thread.sleep(7000);
+		driver.switchTo().defaultContent();
+		Close2.click();
+		Thread.sleep(5000);
+	}
+	
 	public void acceptanceERS() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
@@ -728,8 +844,8 @@ public class TaskCompletionPage extends TestBase{
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
 		setCurrentDate(Date1);
-		setCurrentDate(Date2);
-		FullyCompletedCheckbox.click();
+		//setCurrentDate(Date2);
+		//FullyCompletedCheckbox.click();
 		SaveButton.click();
 		//driver.switchTo().defaultContent();
 		searchCase();
@@ -750,7 +866,7 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(3000);
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
-		IsReceipttrue.click();
+	/*	IsReceipttrue.click();
 		Thread.sleep(2000);
 		IsManualPOtrue.click();
 		Thread.sleep(2000);
@@ -760,7 +876,7 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(2000);
 		IsBackBillingfalse.click();
 		Thread.sleep(2000);
-		IsEveryThingDeliveredtrue.click();
+		IsEveryThingDeliveredtrue.click();	*/
 		Submit.click();
 		Thread.sleep(5000);
 		
@@ -775,56 +891,158 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(10000);
 		alerthelper.acceptAlertIfPresent();
 		waithelper.waitForElement(CheckForSCNUpdates, 10);
+		Thread.sleep(3000);
 		CheckForSCNUpdates.click();
 		Thread.sleep(10000);
 		Submit.click(); 
 		Thread.sleep(13000);
-		setCurrentDate(Date1);
-		setCurrentDate(Date2);
+		//setCurrentDate(Date1);
+		//setCurrentDate(Date2);
 		Submit.click(); 
 		Thread.sleep(10000);
 		//Close2.click();
 		//Thread.sleep(3000);
 	}
 	
-	public void trackSupplierDeliverySP() throws InterruptedException, ParseException
+	public void trackSupplierDeliveryEP() throws InterruptedException, ParseException //new function added
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
-		CaptureDeliveryDetails.click();
+		RaiseClarifyPO.click();
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
-		VendorName.sendKeys("CISCO SYSTEMS");
-		Thread.sleep(4000);
-		//SelectVendor.click();
-		ConfirmVendorSalesOrderRef.sendKeys("CISCO123");
-		//SelectVendor.click();
-		ServiceContactNum.sendKeys("Ser123");
-		setCurrentDate(Date1);
-		setAfterDate_New(EndDate);
-		Thread.sleep(3000);
-		/*javascripthelper.scrollhorizontally();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
+		ClarifyPORef.sendKeys("123");
+		Submit.click();
+		Thread.sleep(5000);
+		javascripthelper.clickElement(EstimatedShipDataAvaltrue);
+		Thread.sleep(10000);
+		setCurrentDate(Date1);//Estimated Ship date
+		Thread.sleep(10000);
+		FirstCountry1.click();
+		FirstCountry1.sendKeys("JAPAN");
+		Submit.click();
+		Thread.sleep(18000);
+		setCurrentDate(Date1);// Ship Out Date
+		Thread.sleep(10000);
+		//setAfterDate(Date2); // Actual Delivery date
+		setAfterDate_New(ActualDelDate);
+		Thread.sleep(13000);
+		CarrierName.sendKeys("CISCO");
+		AirwayBillRef.sendKeys("123");
+		IsPODAttachedEPtrue.click();
+		Thread.sleep(13000);
+		javascripthelper.scrollhorizontally();
+		Thread.sleep(13000);
 		javascripthelper.scrollIntoView(DownButton);
 		DownButton.click();
 		Thread.sleep(3000);
 		AttachmentButton.click();
-		Thread.sleep(3000);
+		Thread.sleep(13000);
 		javascripthelper.scrollhorizontally();
 		dropdownhelper.MoveToTaskandClick(AddButton);
 		Thread.sleep(5000);
 		Attach.click();
-		Thread.sleep(2000);
+		Thread.sleep(12000);
 		FileName.sendKeys(TestFile);
-		Thread.sleep(3000);
+		Thread.sleep(13000);
 		dropdownhelper.selectUsingVisibleText(Category, "Warehouse POD");
-		Thread.sleep(3000);
+		//dropdownhelper.selectUsingVisibleText(Category, "Customer POD");
+		Thread.sleep(13000);
 		ModalSubmit.click();
-		Thread.sleep(3000);*/
+		Thread.sleep(13000);
+		//IsPODAttachedEPtrue.click();
+		//Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(5000);
+		MachxCaseRef.sendKeys("123");
+		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 		Close2.click();
 		Thread.sleep(3000);
+		
+	}
+	
+	public void trackSupplierDeliveryEPIndirect() throws InterruptedException, ParseException	//new function added
+	{
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
+		RaiseClarifyPO.click();
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		Thread.sleep(10000);
+		ClarifyPORef.sendKeys("123");
+		Submit.click();
+		Thread.sleep(5000);
+		javascripthelper.clickElement(EstimatedShipDataAvaltrue);
+		Thread.sleep(10000);
+		setCurrentDate(Date1);//Estimated Ship date
+		Thread.sleep(10000);
+		FirstCountry1.click();
+		FirstCountry1.sendKeys("JAPAN");
+		Submit.click();
+		Thread.sleep(18000);
+		setCurrentDate(Date1);// Ship Out Date
+		Thread.sleep(10000);
+		//setAfterDate(Date2); // Actual Delivery date
+		setAfterDate_New(ActualDelDate);
+		Thread.sleep(13000);
+		CarrierName.sendKeys("CISCO");
+		AirwayBillRef.sendKeys("123");
+		IsPODAttachedEPtrue.click();
+		Thread.sleep(13000);
+		javascripthelper.scrollhorizontally();
+		Thread.sleep(13000);
+		javascripthelper.scrollIntoView(DownButton);
+		DownButton.click();
+		Thread.sleep(3000);
+		AttachmentButton.click();
+		Thread.sleep(13000);
+		javascripthelper.scrollhorizontally();
+		dropdownhelper.MoveToTaskandClick(AddButton);
+		Thread.sleep(5000);
+		Attach.click();
+		Thread.sleep(12000);
+		FileName.sendKeys(TestFile);
+		Thread.sleep(13000);
+		//dropdownhelper.selectUsingVisibleText(Category, "Warehouse POD");
+		dropdownhelper.selectUsingVisibleText(Category, "Customer POD");
+		Thread.sleep(13000);
+		ModalSubmit.click();
+		Thread.sleep(13000);
+		//IsPODAttachedEPtrue.click();
+		//Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(5000);
+		MachxCaseRef.sendKeys("123");
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(5000);
+		driver.switchTo().defaultContent();
+		Close2.click();
+		Thread.sleep(3000);
+	}
+
+	public void trackSupplierDeliverySP() throws InterruptedException
+	{
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
+		CaptureDeliveryDetails.click();
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		VendorName.sendKeys("CISCO");
+		Thread.sleep(10000);
+		VendorRef.sendKeys("123");
+		Thread.sleep(10000);
+		ServiceContract.sendKeys("566");
+		Thread.sleep(3000);
+		setCurrentDate(Date1);
+		Thread.sleep(10000);
+		setCurrentDate(Date2);
+		Thread.sleep(10000);
+		Submit.click();
+		Thread.sleep(10000);
+		driver.switchTo().defaultContent();
+		Close2.click();
 	}
 	
 	public void onsiteIntervention() throws InterruptedException
@@ -835,6 +1053,7 @@ public class TaskCompletionPage extends TestBase{
 		windowhelper.switchToParentWindow();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
 		ClarifyRef.sendKeys("123");
+		Thread.sleep(2000);
 		DispatchRef.sendKeys("123");
 		Thread.sleep(3000);
 		setCurrentDate(Date1);
@@ -847,6 +1066,20 @@ public class TaskCompletionPage extends TestBase{
 		Close2.click();
 		Thread.sleep(3000);
 	}
+	
+	public void ContractUploadODMUser() throws ParseException, InterruptedException	//new function added
+	{
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
+		EngagePOCMTeam.click();
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		Thread.sleep(5000);
+		//HasSIAttachedSRFtrue.click();
+		Submit.click();
+		Thread.sleep(10000);
+
+	}
+	
 	public void acceptanceIS() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
@@ -854,8 +1087,8 @@ public class TaskCompletionPage extends TestBase{
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
 		setCurrentDate(Date1);
-		setCurrentDate(Date2);
-		FullyCompletedCheckbox.click();
+		//setCurrentDate(Date2);
+		//FullyCompletedCheckbox.click(); //This checkbox is checked by default
 		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(3000);
@@ -866,15 +1099,18 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(6000);
 		windowhelper.switchToParentWindow();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
-		IsKPIMissedfalse.click();
+		
+	/*	IsKPIMissedfalse.click();	// Now Radio buttons are selected auto selected
 		Thread.sleep(3000);
 		IsCustomizeReqfalse.click();
 		Thread.sleep(3000);
 		IsBackBillingfalse.click();
 		Thread.sleep(3000);
 		IsEveryThingDeliveredtrue.click();
-		Thread.sleep(3000);
+		Thread.sleep(3000);		*/
+		
 		Submit.click();
+		Thread.sleep(3000);
 		SCNSendToCustomertrue.click();
 		Thread.sleep(4000);
 		CustomerDisputefalse.click();
@@ -886,21 +1122,59 @@ public class TaskCompletionPage extends TestBase{
 		CheckForSCNUpdates.click();
 		Thread.sleep(10000);
 		Submit.click(); 
-		Thread.sleep(3000);
-		Submit.click(); 
-		Thread.sleep(6000);
+		//Thread.sleep(3000);
+		//Submit.click(); 
+		Thread.sleep(10000);
+		Submit.click();
 	}
+	
+	public void serviceProcurementOCD() throws InterruptedException	//added by kp
+	{
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
+		CreateOraclePR.click();
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		PurchaseRequisitionRef.sendKeys("123");
+		Submit.click();
+		Thread.sleep(5000);
+		PORef1.sendKeys("123");
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(5000);
+		Submit.click();
+		Thread.sleep(5000);
+		IsPOSharedWithOCDtrue.click();
+		Thread.sleep(2000);
+		IsReceiptCompletedtrue.click();
+		Thread.sleep(2000);
+		Submit.click();
+		Thread.sleep(5000);
+	}
+	
 	public void engagePOCMTask() throws InterruptedException
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
 		Thread.sleep(3000);
-		EngagePOCMTeamTask.click();
+		EngagePOCMTeam.click();
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
 		Thread.sleep(4000);
+		//HasSIAttachedSRFtrue.click();
+		Thread.sleep(2000);
 		Submit.click();
 		Thread.sleep(5000);
 	}
+	
+	public void validateOCDOrder() throws InterruptedException //added by kp
+	{
+		Thread.sleep(10000);
+		windowhelper.switchToParentWindow();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 20);
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(5000);
+	}
+	
 	public void checkCloseTasks() throws IOException
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);

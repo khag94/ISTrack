@@ -74,7 +74,7 @@ public class TestBase {
 	// "C:\\Users\\XMJF0501\\Downloads\\TemplateDownload";
 	
 	@BeforeSuite
-	public void init()
+	public void init() throws InterruptedException
 	{
 		String workingDir = System.getProperty("user.dir");
 		reportDirectory = new File(workingDir+"\\screenshots");

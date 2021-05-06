@@ -177,15 +177,32 @@ public class ISTrackERSDirectOrderProcessingAMTestCase extends TestBase {
 		taskcompletionpage.trackSupplierDelivery();
 		log.info("################### End Track Supplier Delivery task  ###################");
 		
+		log.info("################### Start Warehouse Staging task  ###################");
+		taskcompletionpage.searchCase();
+		taskcompletionpage.warehouseStaging();
+		log.info("################### End Warehouse Staging task  ###################");
+		
+		log.info("################### Start Track Warehouse Delivery task  ###################");
+		taskcompletionpage.searchCase();
+		taskcompletionpage.trackWarehouseDelivery();
+		myworkpage.logOff();
+		log.info("################### End Track Warehouse Delivery task  ###################");
+		
+	}
+		
+	@Test(priority=4)	
+	public void acceptanceERS() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
 		log.info("######################### Start Login with ODM user  #########################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
 		log.info("####################### End Login with ODM user  ############################");
-		
+			
 		log.info("###################### Start Completing Acceptance ERS task  ######################");
 		taskcompletionpage.searchCase();
 		taskcompletionpage.acceptanceERS();
 		log.info("###################### End Completing Acceptance ERS task  ######################");
 		myworkpage.logOff();
+			
 	}	
 	
 	@Test(priority=5)
@@ -242,6 +259,6 @@ public class ISTrackERSDirectOrderProcessingAMTestCase extends TestBase {
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 }

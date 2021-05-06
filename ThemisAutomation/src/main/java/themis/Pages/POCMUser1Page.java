@@ -62,7 +62,7 @@ public static final Logger log =Logger.getLogger(POCMUser1Page.class.getName());
 			GoldOrder.sendKeys(Order);
 			waithelper.waitForElement(SearchOrder, 10);
 			SearchOrder.click();
-		}
+	}
 	
 	public void contractUpload() throws InterruptedException, IOException
 	{

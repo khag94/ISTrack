@@ -73,8 +73,23 @@ public class OFPage extends TestBase{
 	@FindBy(xpath = "//tbody/tr/td/div/table/tbody/tr[1]/td[2]/span")
 	public WebElement CaseId;
 	
+	@FindBy(xpath = "//input[@id='OCDOrder']")
+	public WebElement OCDServices;
 	
+	@FindBy(xpath = "//input[@id='ManagedOrder']") //new added
+	public WebElement Managed;
 	
+	@FindBy(xpath = "//input[@id='EAMOrder']")	//new added
+	public WebElement EAM;
+	
+	@FindBy(xpath = "//input[@id='ProcessSelected9']")	//new added
+	public WebElement WareHouseStagingCheckBox;
+	
+	@FindBy(xpath = "//input[@id='ProcessSelected10']")	//new added
+	public WebElement TrackWareHouseDeliveryCheckBox;
+	
+	@FindBy(xpath = "//input[@id='ProcessSelected12']")	//new added
+	public WebElement OnsiteInterventionCheckBox;
 	
 	public OFPage()
 	{
@@ -180,10 +195,10 @@ public class OFPage extends TestBase{
 		GetSubProcessList.click();
 		//waithelper.waitForElement(SerialNumber, 20);
 		Thread.sleep(3000);
-		WarehouseStagingProcess.click();// to uncheck
-		Thread.sleep(3000);
-		TrackWarehouseDeliveryProcess.click();//uncheck
-		Thread.sleep(3000);
+		//WarehouseStagingProcess.click();// to uncheck
+		//Thread.sleep(3000);
+		//TrackWarehouseDeliveryProcess.click();//uncheck
+		//Thread.sleep(3000);
 		SerialNumber.click();
 		Thread.sleep(3000);
 		UrgentCase.click();	
@@ -275,6 +290,101 @@ public class OFPage extends TestBase{
 		Submit.click();
 		Thread.sleep(12000);
 	}
+	
+	public void assessOCDServices() throws InterruptedException //new function added
+	{
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 30);
+		AssessOrder.click();
+		waithelper.pageLoadTime(30, TimeUnit.SECONDS);
+		VendorName.sendKeys("CISCO");
+		Thread.sleep(6000);
+		SelectVendor.click();
+		Thread.sleep(4000);
+		OCDServices.click();
+		Thread.sleep(3000);
+		GetSubProcessList.click();
+		Thread.sleep(3000);
+		SerialNumber.click();
+		Thread.sleep(3000);
+		UrgentCase.click();
+		Thread.sleep(3000);
+		Submit.click();
+		waithelper.waitForElement(ConfirmPlan, 20);
+		ConfirmPlan.click();
+		Thread.sleep(3000);
+		Submit.click();
+		Thread.sleep(12000);
+	}
+	
+	public void assessEAMManaged() throws InterruptedException	//new function added
+	{
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 30);
+		AssessOrder.click();
+		waithelper.pageLoadTime(30, TimeUnit.SECONDS);
+		VendorName.sendKeys("CISCO");
+		Thread.sleep(6000);
+		SelectVendor.click();
+		Thread.sleep(4000);
+		
+		Managed.click();
+		Thread.sleep(3000);
+		
+		EAM.click();
+		Thread.sleep(3000);
+		
+		GetSubProcessList.click();
+		Thread.sleep(3000);
+		SerialNumber.click();
+		Thread.sleep(3000);
+		UrgentCase.click();	
+		Thread.sleep(3000);
+		Submit.click();
+		waithelper.waitForElement(ConfirmPlan, 20);
+		ConfirmPlan.click();
+		Submit.click();
+		Thread.sleep(12000);
+	}
+	
+	public void assessEAMManagedWithoutCheckBox() throws InterruptedException	//new function added
+	{
+		driver.switchTo().defaultContent();
+		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 30);
+		AssessOrder.click();
+		waithelper.pageLoadTime(30, TimeUnit.SECONDS);
+		VendorName.sendKeys("CISCO");
+		Thread.sleep(6000);
+		SelectVendor.click();
+		Thread.sleep(4000);
+		
+		Managed.click();
+		Thread.sleep(3000);
+		
+		EAM.click();
+		Thread.sleep(3000);
+		
+		GetSubProcessList.click();
+		Thread.sleep(3000);
+		
+		WareHouseStagingCheckBox.click();
+		Thread.sleep(3000);
+		TrackWareHouseDeliveryCheckBox.click();
+		Thread.sleep(3000);
+		OnsiteInterventionCheckBox.click();
+		Thread.sleep(10000);
+		
+		SerialNumber.click();
+		Thread.sleep(3000);
+		UrgentCase.click();	
+		Thread.sleep(3000);
+		Submit.click();
+		waithelper.waitForElement(ConfirmPlan, 20);
+		ConfirmPlan.click();
+		Submit.click();
+		Thread.sleep(12000);
+	}
+	
 	public void captureCaseId()
 	{
 		String Text1=CaseId.getText();

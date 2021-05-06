@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Apr 08 14:20:41 IST 2021</td>
+<td>Started on:</td><td>Fri Apr 16 08:43:04 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>73 seconds (73383 ms)</td>
+<tr><td>Total time:</td><td>85 seconds (85654 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,40 +76,34 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='TestCases.ISTrackOrderProcessingAMTestCase.newCaseGeneration()'><b>newCaseGeneration</b><br>Test class: TestCases.ISTrackOrderProcessingAMTestCase</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Failed to convert data to an object
+<td><div><pre>org.openqa.selenium.WebDriverException: Failed to decode response from marionette
 Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.168.251&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.166.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14348, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
-*** Element info: {Using=xpath, value=//span[contains(text(),&apos;GO&apos;)]}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 4624, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f798b6ab-4906-4f76-a268-d54b011193f2
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:343)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:186)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.getText(Unknown Source)
-	at themis.Pages.CreateCasePage.verifyData(CreateCasePage.java:101)
-	at TestCases.ISTrackOrderProcessingAMTestCase.newCaseGeneration(ISTrackOrderProcessingAMTestCase.java:116)
+	at com.sun.proxy.$Proxy14.getScreenshotAs(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.getScreenshotAs(EventFiringWebDriver.java:285)
+	at themis.Util.ReusableMethods.takeScreenshot(ReusableMethods.java:48)
+	at themis.Pages.CreateCasePage.checkPricingDetails(CreateCasePage.java:120)
+	at TestCases.ISTrackOrderProcessingAMTestCase.newCaseGeneration(ISTrackOrderProcessingAMTestCase.java:119)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace208437930", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace208437930'><pre>org.openqa.selenium.WebDriverException: Failed to convert data to an object
+... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1003737182", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1003737182'><pre>org.openqa.selenium.WebDriverException: Failed to decode response from marionette
 Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.168.251&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.166.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14348, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
-*** Element info: {Using=xpath, value=//span[contains(text(),&apos;GO&apos;)]}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 4624, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f798b6ab-4906-4f76-a268-d54b011193f2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -121,22 +115,18 @@ Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:343)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:186)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.getText(Unknown Source)
-	at themis.Pages.CreateCasePage.verifyData(CreateCasePage.java:101)
-	at TestCases.ISTrackOrderProcessingAMTestCase.newCaseGeneration(ISTrackOrderProcessingAMTestCase.java:116)
+	at com.sun.proxy.$Proxy14.getScreenshotAs(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.getScreenshotAs(EventFiringWebDriver.java:285)
+	at themis.Util.ReusableMethods.takeScreenshot(ReusableMethods.java:48)
+	at themis.Pages.CreateCasePage.checkPricingDetails(CreateCasePage.java:120)
+	at TestCases.ISTrackOrderProcessingAMTestCase.newCaseGeneration(ISTrackOrderProcessingAMTestCase.java:119)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -166,16 +156,16 @@ Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>67</td>
-<td>TestCases.ISTrackOrderProcessingAMTestCase@32f232a5</td></tr>
+<td>80</td>
+<td>TestCases.ISTrackOrderProcessingAMTestCase@710c2b53</td></tr>
 <tr>
 <td title='TestCases.ISTrackOrderProcessingAMTestCase.newCaseGeneration()'><b>newCaseGeneration</b><br>Test class: TestCases.ISTrackOrderProcessingAMTestCase</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
 Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.168.251&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.166.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14348, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 4624, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f798b6ab-4906-4f76-a268-d54b011193f2
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -189,13 +179,13 @@ Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
 	at org.openqa.selenium.support.events.EventFiringWebDriver.getScreenshotAs(EventFiringWebDriver.java:285)
 	at themis.Report.TestListener.onTestFailure(TestListener.java:74)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1004390006", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1004390006'><pre>org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2113367449", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2113367449'><pre>org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
 Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.168.251&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.238.166.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14348, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 4624, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f798b6ab-4906-4f76-a268-d54b011193f2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -243,8 +233,8 @@ Session ID: 681b002a-f298-4cd0-a156-da9680ad7ad1
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>73</td>
-<td>TestCases.ISTrackOrderProcessingAMTestCase@32f232a5</td></tr>
+<td>85</td>
+<td>TestCases.ISTrackOrderProcessingAMTestCase@710c2b53</td></tr>
 </table><p>
 </body>
 </html>

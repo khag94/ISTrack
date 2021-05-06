@@ -2,6 +2,7 @@ package themis.Pages;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
@@ -169,6 +170,8 @@ public class GoldOrderPage extends TestBase
 	@FindBy(xpath = "//table/tbody/tr[2]/td/table/tbody[2]/tr[1]/td[6]")
 	public WebElement Notes;
 	
+	@FindBy(xpath = "//img[@class='butOptionsBlueRollover_image']")
+	public WebElement OPTIONS;
 	
 	public GoldOrderPage()
 	
@@ -429,4 +432,21 @@ public class GoldOrderPage extends TestBase
 		log.info("Acceptance Notes are:::"+NotesText);
 	}
 	
+	public void orderSearchAllWork() throws Throwable, InvalidFormatException, IOException	//new function added
+	{
+		waithelper.pageLoadTime(5, TimeUnit.SECONDS);
+		String Order=excelhelper.getDataFromExcel(ExcelPath,SheetName1);
+		log.info("Gold order imported from excel"+Order);
+		OrderNumber.sendKeys(Order);
+		Search.click();
+		SelectOrder.click();
+		Thread.sleep(7000);
+	}
+	
+	public void copyOrder() throws InterruptedException
+	{
+		OPTIONS.click();
+		Thread.sleep(2000);
+		
+	}
 }

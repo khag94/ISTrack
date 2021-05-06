@@ -212,7 +212,9 @@ public class MyGroupPage extends TestBase{
 	{
 		waithelper.waitForElement(CheckboxSelect, 10);
 		CheckboxSelect.click();
+		Thread.sleep(2000);
 		dropdownhelper.selectUsingVisibleText(Operator, "POCMUser1");
+		Thread.sleep(3000);
 		ProcessAssignment.click();
 		Thread.sleep(10000);
 	}

@@ -177,11 +177,30 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 		taskcompletionpage.trackSupplierDelivery();
 		log.info("################### End Track Supplier Delivery task  ###################");
 		
+		log.info("################### Start Warehouse Staging task  ###################");
+		taskcompletionpage.searchCase();
+		taskcompletionpage.warehouseStaging();
+		log.info("################### End Warehouse Staging task  ###################");
+		
 		log.info("######################### Start Completing Track Supplier Delivery task ####################");
 		taskcompletionpage.searchCase();
 		taskcompletionpage.trackSupplierDeliverySP();
 		log.info("######################### Start Completing Track Supplier Delivery task ####################");
 		
+		log.info("################### Start Track Warehouse Delivery task  ###################");
+		taskcompletionpage.searchCase();
+		taskcompletionpage.trackWarehouseDelivery();
+		myworkpage.logOff();
+		log.info("################### End Track Warehouse Delivery task  ###################");
+		
+		
+		
+	}
+	
+	
+	@Test(priority=4)
+	public void acceptanceERS() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
 		log.info("######################### Start Login with ODM user  #########################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
 		log.info("####################### End Login with ODM user  ############################");
@@ -191,7 +210,7 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 		taskcompletionpage.acceptanceERS();
 		log.info("###################### End Completing Acceptance ERS task  ######################");
 		myworkpage.logOff();
-	}	
+	}
 	
 	@Test(priority=5)
 	public void checkRFS_RFB() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
@@ -212,7 +231,7 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 		myworkpage.logOff();
 	}
 	
-	@Test(priority=7)
+/*	@Test(priority=7)
 	public void billingUser1() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
 	{
 		istrackloginpage.Login(prop.getProperty("username_ISTrack3"), prop.getProperty("password_ISTrack"));
@@ -230,7 +249,7 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 		taskcompletionpage.searchCase();
 		taskcompletionpage.checkCloseTasks_Maintenance();
 		myworkpage.logOff();
-	}
+	}	*/
 	
 	@Test(priority=9)
 	public void checkGoldOrderAcceptanceStatus() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException

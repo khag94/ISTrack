@@ -141,9 +141,11 @@ public class ISTrackOrderProcessingAMTestCase extends TestBase {
 		log.info("################### Start Searching order in My Works ###################");
 		myworkpage.orderSearchMyWork();
 		log.info("################### End Searching order in My Works ###################");
+		
 		log.info("################### Start Capturing Task Names in My Works ###################");
 		myworkpage.captureTaskNamesAndSelectCheckbox();
 		log.info("################### End Capturing Task Names in My Works ###################");
+		
 		log.info("################### Start Re-assigning user ###################");
 		myworkpage.reassignTask();
 		log.info("################### End Re-assigning user ###################"); 
@@ -219,8 +221,8 @@ public class ISTrackOrderProcessingAMTestCase extends TestBase {
 		taskcompletionpage.equipmentProcurement();
 		
 		taskcompletionpage.searchCase();
-		
 		taskcompletionpage.trackSupplierDelivery();
+		
 		taskcompletionpage.searchCase();
 		taskcompletionpage.warehouseStaging();
 		
@@ -303,7 +305,7 @@ public class ISTrackOrderProcessingAMTestCase extends TestBase {
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 }
 

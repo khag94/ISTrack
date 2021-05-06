@@ -60,6 +60,12 @@ public class AllWorkPage extends TestBase{
 	@FindBy(xpath = "(//div[@class='oflowDivM '][contains(.,'WareHouseStaging')])[1]")
 	public WebElement WarehousingStaging;
 	
+	@FindBy(xpath = "//tr[@id='$PWorkListEmbedTask$ppxResults$l2']//td[contains(@class,'wrapText')]//div[contains(@class,'oflowDivM')]//span//a[contains(@href,'#')][contains(text(),'Service Procurement OCD')]")
+	public WebElement ServiceProcurementOCDTask; //added by kp
+	
+	@FindBy(xpath = "//tr[@id='$PWorkListEmbedTask$ppxResults$l4']//td[contains(@class,'wrapText')]//div[contains(@class,'oflowDivM')]//span//a[contains(@href,'#')][contains(text(),'AcceptanceIS')]")
+	public WebElement AcceptanceISTask; //added by kp
+	
 	@FindBy(xpath = "//label[contains(.,'All Work')]")
 	public WebElement AllWork;
 	
@@ -198,6 +204,19 @@ public class AllWorkPage extends TestBase{
 		System.out.println("Task4 name is:: "+ Task4);
 		Thread.sleep(10000);
 		}
+	
+	public void captureTaskNames_OCDServices() throws InterruptedException //function added by kp
+	{
+		String Task1 = verificationhelper.getText(NewOrderTask);
+		System.out.println("Task name is: " + Task1);
+		
+		String Task2 = verificationhelper.getText(ServiceProcurementOCDTask);
+		System.out.println("Task name is: " + Task2);
+		
+		String Task3 = verificationhelper.getText(AcceptanceISTask);
+		System.out.println("Task name is: " + Task3);
+		Thread.sleep(5000);
+	}
 		
 	
 	public void checkColumnNamesAndCount() throws IOException
