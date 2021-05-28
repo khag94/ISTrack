@@ -8,22 +8,20 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">91,073</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test10</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">307,638</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">AfterClass</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">66,498</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">1</th><th class="num">0</th><th class="num">0</th><th class="num attn">3</th><th class="num">374,136</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestCases.GoldOrderCopy</td><td><a href="#m0">copyGoldOrder</a></td><td rowspan="1">1620290951559</td><td rowspan="1">37911</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestCases.GoldOrderCopy</td><td><a href="#m1">launchGuardianApp</a></td><td rowspan="1">1620290903812</td><td rowspan="1">47738</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test10 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">TestCases.ISTrackVendorBrandedServicesWelcomeLetter</td><td><a href="#m0">taskCompletionByProcurementUserISTrack</a></td><td rowspan="1">1621495674276</td><td rowspan="1">6070</td></tr><tr class="failedeven"><td><a href="#m1">taskCompletionODMUserISTrack</a></td><td rowspan="1">1621495680447</td><td rowspan="1">5034</td></tr><tr><th colspan="4">Test10 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestCases.ISTrackVendorBrandedServicesWelcomeLetter</td><td><a href="#m2">newCaseGenerationISTrack</a></td><td rowspan="1">1621495385273</td><td rowspan="1">288965</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">AfterClass &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">themis.Util.AutoGenerateMail</td><td><a href="#m3">GenerateMail</a></td><td rowspan="1">1621495685944</td><td rowspan="1">66308</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">TestCases.GoldOrderCopy#copyGoldOrder</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Timeout loading page after 5000ms
+<h2>Test10</h2><h3 id="m0">TestCases.ISTrackVendorBrandedServicesWelcomeLetter#taskCompletionByProcurementUserISTrack</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">captureScreen method called<br/><a href='D:\git\ISTrack\ThemisAutomation\screenshots\AM_taskCompletionByProcurementUserISTrack_20_05_2021_12_58_00.png'><img src='D:\git\ISTrack\ThemisAutomation\screenshots\AM_taskCompletionByProcurementUserISTrack_20_05_2021_12_58_00.png'height='100' width='100'/></a></div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Timeout loading page after 5000ms
 Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.12.49&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2188, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a9a95f25-8d19-4ff0-bf2d-f0337d7d6ba2
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8544, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 375081e3-be32-4bef-82d6-518f3b6bc696
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -32,50 +30,45 @@ Session ID: a9a95f25-8d19-4ff0-bf2d-f0337d7d6ba2
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.lambda$new$0(EventFiringWebDriver.java:368)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.click(EventFiringWebDriver.java:380)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy16.click(Unknown Source)
-	at themis.Pages.GoldOrderPage.orderSearchAllWork(GoldOrderPage.java:442)
-	at TestCases.GoldOrderCopy.copyGoldOrder(GoldOrderCopy.java:66)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at themis.Pages.ISTrackLoginPage.Login(ISTrackLoginPage.java:46)
+	at TestCases.ISTrackVendorBrandedServicesWelcomeLetter.taskCompletionByProcurementUserISTrack(ISTrackVendorBrandedServicesWelcomeLetter.java:150)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">TestCases.GoldOrderCopy#launchGuardianApp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 38 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestCases.ISTrackVendorBrandedServicesWelcomeLetter#taskCompletionODMUserISTrack</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">captureScreen method called<br/><a href='D:\git\ISTrack\ThemisAutomation\screenshots\AM_taskCompletionODMUserISTrack_20_05_2021_12_58_05.png'><img src='D:\git\ISTrack\ThemisAutomation\screenshots\AM_taskCompletionODMUserISTrack_20_05_2021_12_58_05.png'height='100' width='100'/></a></div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Timeout loading page after 5000ms
+Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
+System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.12.49&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 8544, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 375081e3-be32-4bef-82d6-518f3b6bc696
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
+	at com.sun.proxy.$Proxy12.get(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.get(EventFiringWebDriver.java:161)
+	at themis.Pages.ISTrackLoginPage.Login(ISTrackLoginPage.java:36)
+	at TestCases.ISTrackVendorBrandedServicesWelcomeLetter.taskCompletionODMUserISTrack(ISTrackVendorBrandedServicesWelcomeLetter.java:185)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestCases.ISTrackVendorBrandedServicesWelcomeLetter#newCaseGenerationISTrack</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>AfterClass</h2><h3 id="m3">themis.Util.AutoGenerateMail#GenerateMail</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">captureScreen method called<br/><a href='D:\git\ISTrack\ThemisAutomation\screenshots\AM_GenerateMail_20_05_2021_12_59_12.png'><img src='D:\git\ISTrack\ThemisAutomation\screenshots\AM_GenerateMail_20_05_2021_12_59_12.png'height='100' width='100'/></a></div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.sun.mail.smtp.SMTPSendFailedException: 554 Mail from parminder.kaur@orange.com rejected for policy reasons.
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2108)
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1609)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1117)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at themis.Util.AutoGenerateMail.GenerateMail(AutoGenerateMail.java:273)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

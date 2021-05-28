@@ -21,7 +21,7 @@
       <class name="TestCases.ISTrackOrderProcessingAMTestCase"/>
     </classes>
   </test> -->
-  <!-- <test name="Test4">
+ <!--  <test name="Test4">
     <classes>
       <class name="TestCases.ISTrackMaintenanceScopeProcessingAMTestCase"/>
     </classes>
@@ -41,11 +41,36 @@
       <class name="TestCases.ISTrackEAMManagedWithCheckBoxAMTestCase"/>
     </classes>
   </test> -->
-  <test name="Test8">
+<!--  <test name="Test8">
     <classes>
       <class name="TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase"/>
     </classes>
-  </test>
+  </test> -->
+<!--  <test name="Test9">
+    <classes>
+      <class name="TestCases.ISTrackDualAMTestCase"/>
+    </classes>
+  </test> -->
+   <test name="Test10">
+    <classes>
+      <class name="TestCases.ISTrackVendorBrandedServicesWelcomeLetter"/>
+    </classes>
+  </test> 
+    <!-- <test name="Test11">
+   <classes>
+      <class name="TestCases.ISTrackOnsiteInterventionProcessingAMTestCase"/>
+    </classes>
+  </test>  --> 
+  <!--   <test name="Test12">
+    <classes>
+      <class name="TestCases.ISTrackVendorBrandedServiceOrderProcessingAMTestCase"/>
+    </classes>
+  </test> -->
+<!--   <test name="Test13">
+    <classes>
+      <class name="TestCases.MaintenancePlusOnsiteInterventionScopeProcessingAMTestCase"/>
+    </classes>
+  </test> -->
    <test name="AfterClass">
   	<classes>
       		<class name="themis.Util.AutoGenerateMail"/>

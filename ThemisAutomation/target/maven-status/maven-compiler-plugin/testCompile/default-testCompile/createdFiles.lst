@@ -1,5 +1,6 @@
 TestCases\ISTrackERSDirectPlusVBSOrderProcessingAMTestCase.class
 TestCases\ISTrackDualAMTestCase.class
+TestCases\ScopeVendorBrandedServicesWelcomeLetter.class
 TestCases\ISTrackEAMManagedWithCheckBoxAMTestCase.class
 TestCases\ISTrackOrderProcessingAMTestCase.class
 TestCases\ISTrackMaintenanceScopeProcessingAMTestCase.class

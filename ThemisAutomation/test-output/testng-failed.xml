@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="themis.Report.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="Test10(failed)">
     <classes>
-      <class name="TestCases.GoldOrderCopy">
+      <class name="TestCases.ISTrackVendorBrandedServicesWelcomeLetter">
         <methods>
+          <include name="tearDown"/>
+          <include name="taskCompletionByProcurementUserISTrack"/>
+          <include name="taskCompletionODMUserISTrack"/>
+          <include name="Init"/>
           <include name="init"/>
-          <include name="copyGoldOrder"/>
         </methods>
-      </class> <!-- TestCases.GoldOrderCopy -->
+      </class> <!-- TestCases.ISTrackVendorBrandedServicesWelcomeLetter -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test10(failed) -->
+  <test thread-count="5" name="AfterClass(failed)">
+    <classes>
+      <class name="themis.Util.AutoGenerateMail">
+        <methods>
+          <include name="GenerateMail"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- themis.Util.AutoGenerateMail -->
+    </classes>
+  </test> <!-- AfterClass(failed) -->
+</suite> <!-- Failed suite [Suite] -->

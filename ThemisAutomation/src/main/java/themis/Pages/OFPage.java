@@ -91,6 +91,11 @@ public class OFPage extends TestBase{
 	@FindBy(xpath = "//input[@id='ProcessSelected12']")	//new added
 	public WebElement OnsiteInterventionCheckBox;
 	
+	@FindBy(xpath = "//input[@id='WelcomeLetter']")
+	public WebElement WL;
+	@FindBy(xpath = "//input[@id='VBSOrder']")
+	public WebElement VBS; 
+	
 	public OFPage()
 	{
 		PageFactory.initElements(driver, this);
@@ -394,5 +399,34 @@ public class OFPage extends TestBase{
 		System.out.println("Excel Sheet updated with Case Id"+Text1);
 	}
 	
+	public void assessOrderVendorWelcome() throws InterruptedException
+    {
+           driver.switchTo().defaultContent();
+           waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 30);
+           AssessOrder.click();
+           waithelper.pageLoadTime(30, TimeUnit.SECONDS); 
+           VendorName.sendKeys("CISCO");
+           Thread.sleep(10000);
+           SelectVendor.click();
+           Thread.sleep(10000);
+           //waithelper.waitForElement(EquipmentResale, 20);
+           VBS.click();
+           Thread.sleep(10000);
+           WL.click();
+           Thread.sleep(10000);
+           GetSubProcessList.click();
+           //waithelper.waitForElement(SerialNumber, 20);
+           Thread.sleep(10000);
+           SerialNumber.click();
+           Thread.sleep(3000);
+           UrgentCase.click(); 
+           Thread.sleep(3000);
+           Submit.click();
+           Thread.sleep(8000);
+           waithelper.waitForElement(ConfirmPlan, 30);
+           ConfirmPlan.click();
+           Submit.click();
+           Thread.sleep(8000);
+    }
 }
 

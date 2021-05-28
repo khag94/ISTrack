@@ -2,6 +2,7 @@ package TestCases;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.concurrent.TimeUnit;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
@@ -13,6 +14,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import themis.Pages.AllWorkPage;
@@ -31,6 +33,7 @@ import themis.Pages.POCMUser1Page;
 import themis.Pages.TaskCompletionPage;
 import themis.TestBase.TestBase;
 import themis.Util.AutoGenerateMail;
+import themis.Util.WaitHelper;
 
 public class ISTrackEAMManagedWithoutCheckBoxAMTestCase extends TestBase{
 	
@@ -51,6 +54,7 @@ public class ISTrackEAMManagedWithoutCheckBoxAMTestCase extends TestBase{
 	GuardianLoginPage  guardianloginpage;
 	AutoGenerateMail autogeneratemail;
 	OTPage otpage;
+	WaitHelper waithelper;
 
 	
 	
@@ -92,8 +96,9 @@ public class ISTrackEAMManagedWithoutCheckBoxAMTestCase extends TestBase{
 		guardianloginpage = new GuardianLoginPage();
 		autogeneratemail = new AutoGenerateMail();
 		otpage = new OTPage();
-		
+		waithelper = new WaitHelper();
 	}
+
 	
 	@Test(priority=1)
 	public void newCaseGeneration() throws Throwable
@@ -163,7 +168,7 @@ public class ISTrackEAMManagedWithoutCheckBoxAMTestCase extends TestBase{
 		
 	}
 	@Test(priority=2)
-	public void taskCompletion() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException, ParseException
+	public void taskCompletionByProcurementUser() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException, ParseException
 	{
 		log.info("################### Start login in IS Track Application as Procurement User ###################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack1"), prop.getProperty("password_ISTrack"));
@@ -242,7 +247,7 @@ public class ISTrackEAMManagedWithoutCheckBoxAMTestCase extends TestBase{
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 
 }

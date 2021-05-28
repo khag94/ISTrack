@@ -63,20 +63,19 @@ public class ISTrackOnsiteInterventionProcessingAMTestCase extends TestBase {
 	}
 	
 	@BeforeClass
-	//@BeforeSuite
 	public void Message()
 	{
 		log.info("IS Track Automated regression on AM Environment started");
 	}
+	
 	@AfterClass
-	//@AfterSuite
 	public void automaticReport() throws AddressException, InvalidFormatException, InterruptedException, IOException, MessagingException
 	{
 		autogeneratemail.GenerateMail();
 		driver.quit();
 	}
-	@BeforeMethod
 	
+	@BeforeMethod	
 	public void Init() throws InterruptedException
 	{
 		initialization();
@@ -97,7 +96,7 @@ public class ISTrackOnsiteInterventionProcessingAMTestCase extends TestBase {
 	}
 	
 	@Test(priority=1)
-	public void newCaseGeneration() throws Throwable
+	public void newCaseGenerationISTrack() throws Throwable
 	{
 		log.info("################### Start login in IS Track Application ###################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
@@ -141,6 +140,14 @@ public class ISTrackOnsiteInterventionProcessingAMTestCase extends TestBase {
 		myworkpage.orderSearchMyWork();
 		log.info("################### End Searching order in My Works ###################");
 		
+		log.info("################### Start Capturing Task Names in My Works ###################");
+		myworkpage.captureTaskNamesAndSelectCheckBoxOnsiteIntervention();
+		log.info("################### End Capturing Task Names in My Works ###################");
+		
+		log.info("################### Start Re-assigning user ###################");
+		myworkpage.reassignTask();
+		log.info("################### End Re-assigning user ###################");
+		
 		log.info("################### Start Single click check on New Order click ###################");
 		myworkpage.singleClickCheck_ValidateOrder();
 		log.info("################### End Single click check on New Order click ###################");
@@ -150,67 +157,105 @@ public class ISTrackOnsiteInterventionProcessingAMTestCase extends TestBase {
 		log.info("################### End Validate Order ###################");
 		myworkpage.logOff();
 	}
+	
 	@Test(priority=2)
 	public void checkManageStatusInGold() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
+		log.info("################### Start login in Guardian Application ###################");
 		guardianloginpage.Login(prop.getProperty("username"), prop.getProperty("password"));
+		log.info("################### End login in Guardian Application ###################");
+		
+		log.info("################### Start launching GOLD UAT ###################");
 		guardianhomepage.launch_ApplicationFromGuardian(guardianhomepage.GoldUAT);
+		log.info("################### End launching GOLD UAT ###################");
+		
+		log.info("################### Start searching GOLD order ###################");
 		goldorderpage.searchOrderForStatus();
+		log.info("################### End searching GOLD order ###################");
+		
+		log.info("################### Start checking GOLD order Manage status  ###################");
 		goldorderstatuscheckpage.statusCheck("Manage");
+		log.info("################### End checking GOLD order Manage status  ###################");
+		
 		goldorderstatuscheckpage.checkTOS_APD();
 		goldorderstatuscheckpage.checkReviseTDD();
 	}
 	
 	@Test(priority=3)
-	public void taskCompletion() throws InvalidFormatException, IOException, Throwable
+	public void taskCompletionByProcurementUserISTrack() throws InvalidFormatException, IOException, Throwable
 	{
+		log.info("################### Start login in IS Track Application as Procurement User ###################");
+		istrackloginpage.Login(prop.getProperty("username_ISTrack1"), prop.getProperty("password_ISTrack"));
+		log.info("################### End login in IS Track Application ###################");
 		
-		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
-		
-		log.info("######################### Start Searching Order in All Works ############################");
-		allworkpage.orderSearchAllWork();
-		log.info("######################### End Searching Order in All Works ############################");
+		//log.info("######################### Start Searching Order in All Works ############################");
+		//allworkpage.orderSearchAllWork();
+		//log.info("######################### End Searching Order in All Works ############################");
 		
 		log.info("######################### Start Searching Order in My Works ############################");
-		myworkpage.caseSearchMyWork();
+		//myworkpage.caseSearchMyWork();
+		taskcompletionpage.searchCase();
 		log.info("######################### End Searching Order in My Works ############################");
 		
 		log.info("######################### Start Completing Online Intervention task ####################");
-		taskcompletionpage.searchCase();
 		taskcompletionpage.onsiteIntervention();
 		log.info("######################### End Completing Online Intervention task ####################");
 		
-		log.info("######################### Start Completing acceptanceIS task ####################");
-		taskcompletionpage.searchCase();
-		taskcompletionpage.acceptanceIS();
-		log.info("######################### End Completing acceptanceIS task ####################");
-		
 		myworkpage.logOff();
-	}	
+	}
 	
 	@Test(priority=4)
-	public void checkRFS_RFBACheckinGold() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
+	public void acceptanceISByOdmUserISTrack() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
 	{
-		guardianloginpage.Login(prop.getProperty("username"), prop.getProperty("password"));
-		guardianhomepage.launch_ApplicationFromGuardian(guardianhomepage.GoldUAT);
-		goldorderpage.searchOrderForStatus();
-		goldorderstatuscheckpage.checkRFS_RFB();
+		log.info("################### Start login in IS Track Application as ODM User ###################");
+		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
+		log.info("###################  End login in IS Track Application ###################");
+		
+		log.info("######################### Start Searching Order ############################");
+		taskcompletionpage.searchCase();
+		log.info("######################### End Searching Order ############################");
+		
+		log.info("######################### Start Completing acceptanceIS task ####################");
+		taskcompletionpage.acceptanceIS();
+		log.info("######################### End Completing acceptanceIS task ####################");
 	}
 	
 	@Test(priority=5)
-	public void billingSupervisor() throws InvalidFormatException, IOException, Throwable
+	public void checkRFS_RFBInGold() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
 	{
-		istrackloginpage.Login(prop.getProperty("username_ISTrack2"), prop.getProperty("password_ISTrack"));
+		log.info("################### Start login in Guardian Application ###################");
+		guardianloginpage.Login(prop.getProperty("username"), prop.getProperty("password"));
+		log.info("################### End login in Guardian Application ###################");
+		
+		log.info("################### Start launching GOLD UAT ###################");
+		guardianhomepage.launch_ApplicationFromGuardian(guardianhomepage.GoldUAT);
+		log.info("################### End launching GOLD UAT ###################");
+		
+		log.info("################### Start searching GOLD Order ###################");
+		goldorderpage.searchOrderForStatus();
+		log.info("################### End searching GOLD Order ###################");
+		
+		log.info("################### Start cheking RFS & RFB ###################");
+		goldorderstatuscheckpage.checkRFS_RFB();
+		log.info("################### End cheking RFS & RFB ###################");
+	}
 	
-		log.info("################## Billing Supervisor would start assigning order to Billing User1 ####################");
+	@Test(priority=6)
+	public void billingSupervisorISTrack() throws InvalidFormatException, IOException, Throwable
+	{
+		log.info("################### Start login in IS Track Application as Billing Supervisor ###################");
+		istrackloginpage.Login(prop.getProperty("username_ISTrack2"), prop.getProperty("password_ISTrack"));
+		log.info("################### End login in IS Track Application as Billing Supervisor ###################");
+	
+		log.info("################## Billing Supervisor starts assigning order to Billing User1 ####################");
 		mygrouppage.goldOrderSearchMyGroup();
 		mygrouppage.assign();
-		log.info("################## Billing Supervisor would end assigning order to Billing User1 ####################");
+		log.info("################## Billing Supervisor ends assigning order to Billing User1 ####################");
 		
 		myworkpage.logOff();
 	}
 	
-	@Test(priority=6)
+/*	@Test(priority=6)
 	public void billingUser1() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
 	{
 		istrackloginpage.Login(prop.getProperty("username_ISTrack3"), prop.getProperty("password_ISTrack"));
@@ -229,16 +274,25 @@ public class ISTrackOnsiteInterventionProcessingAMTestCase extends TestBase {
 		taskcompletionpage.searchCase();
 		taskcompletionpage.checkCloseTasks_OnlineIntervention();
 		myworkpage.logOff();
-	}
+	}	*/
 	
-	@Test(priority=8)
+	@Test(priority=7)
 		public void checkGoldOrderAcceptanceStatus() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 		{
+			log.info("################### Start login in Guardian Application ###################");
 			guardianloginpage.Login(prop.getProperty("username"), prop.getProperty("password"));
+			log.info("################### End login in Guardian Application ###################");
+			
+			log.info("################### Start launching GOLD UAT ###################");
 			guardianhomepage.launch_ApplicationFromGuardian(guardianhomepage.GoldUAT);
+			log.info("################### End launching GOLD UAT ###################");
+			
+			log.info("################### Start searching Order and checking status ###################");
 			goldorderpage.searchOrderForStatus();
 			goldorderstatuscheckpage.statusCheck("Acceptance");
 			goldorderstatuscheckpage.approveAcceptance();
+			log.info("################### End searching Order and checking status ###################");
+			
 		}
 		
 	@AfterMethod

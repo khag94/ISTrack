@@ -97,7 +97,7 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 	}
 	
 	@Test(priority=1)
-	public void newCaseGeneration() throws Throwable
+	public void newCaseGenerationISTrack() throws Throwable
 	{
 		log.info("################### Start login in IS Track Application ###################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
@@ -161,7 +161,7 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 	}
 
 	@Test(priority=3)
-	public void taskCompletion() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException, ParseException
+	public void taskCompletionByProcurementUser() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException, ParseException
 	{
 		log.info("################### Start Login to Procurement User  ###################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack1"), prop.getProperty("password_ISTrack"));
@@ -199,7 +199,7 @@ public class ISTrackERSDirectPlusVBSOrderProcessingAMTestCase extends TestBase {
 	
 	
 	@Test(priority=4)
-	public void acceptanceERS() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	public void acceptanceERSByODMUser() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		log.info("######################### Start Login with ODM user  #########################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));

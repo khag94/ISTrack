@@ -3,12 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.GoldOrderCopy">
+      <class name="TestCases.ScopeVendorBrandedServicesWelcomeLetter">
         <methods>
+          <include name="validateOrder"/>
+          <include name="myWorkSearch"/>
+          <include name="taskCompletionODMUserISTrack"/>
+          <include name="allWorkSearch"/>
+          <include name="taskCompletionByProcurementUserISTrack"/>
+          <include name="launchISTrack"/>
+          <include name="newCaseGeneration"/>
           <include name="init"/>
-          <include name="copyGoldOrder"/>
+          <include name="Init"/>
         </methods>
-      </class> <!-- TestCases.GoldOrderCopy -->
+      </class> <!-- TestCases.ScopeVendorBrandedServicesWelcomeLetter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

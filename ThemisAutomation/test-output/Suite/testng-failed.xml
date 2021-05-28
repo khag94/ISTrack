@@ -4,6 +4,19 @@
   <listeners>
     <listener class-name="themis.Report.TestListener"/>
   </listeners>
+  <test thread-count="5" name="Test10(failed)">
+    <classes>
+      <class name="TestCases.ISTrackVendorBrandedServicesWelcomeLetter">
+        <methods>
+          <include name="tearDown"/>
+          <include name="taskCompletionByProcurementUserISTrack"/>
+          <include name="taskCompletionODMUserISTrack"/>
+          <include name="Init"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- TestCases.ISTrackVendorBrandedServicesWelcomeLetter -->
+    </classes>
+  </test> <!-- Test10(failed) -->
   <test thread-count="5" name="AfterClass(failed)">
     <classes>
       <class name="themis.Util.AutoGenerateMail">

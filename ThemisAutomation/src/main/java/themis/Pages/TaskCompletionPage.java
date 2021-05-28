@@ -18,6 +18,7 @@ import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,6 +44,7 @@ public class TaskCompletionPage extends TestBase{
 	
 	String ExcelPath=System.getProperty("user.dir")+"/src/main/java/themis/Data/GoldThemis.xlsx";
 	String TestFile=System.getProperty("user.dir")+"\\src\\main\\java\\themis\\Data\\Test.txt";
+	String TestPDF=System.getProperty("user.dir")+"\\src\\main\\java\\themis\\Data\\sample.pdf";
 	String SheetName2="Sheet3";
 	
 	
@@ -227,6 +229,9 @@ public class TaskCompletionPage extends TestBase{
 	@FindBy(xpath = "//a[contains(.,'Other Actions')]")
 	public WebElement OtherActions;
 	
+	@FindBy(xpath = "//a[@class='ActionLink']")	//Name has to be changed later
+    public WebElement otherActions;
+	
 	@FindBy(xpath = "//td[contains(.,'Track Delay And Escalatio...')]")
 	public WebElement TrackDelay; 
 	
@@ -370,6 +375,12 @@ public class TaskCompletionPage extends TestBase{
 	@FindBy(xpath = "//input[@id='SvcContractNum1']")	//new added
 	public WebElement ServiceContract;
 	
+	@FindBy(xpath = "//a[contains(text(),'Validate Order')]")
+    public WebElement Validateorder;
+	
+	@FindBy(xpath = "//input[@id='VBSMargin']")
+    public WebElement VendorMargin;
+	
 	@FindBy(xpath = "//input[@id='EndDate1']")
 	public WebElement EndDate;
 	
@@ -382,6 +393,22 @@ public class TaskCompletionPage extends TestBase{
 	@FindBy(xpath = "//input[@id='DispatchRef1']")
 	public WebElement DispatchRef;
 
+	@FindBy(xpath = "//li[@id='Tab3']//img")
+	public WebElement AttachWelcomeletter;
+
+	@FindBy(xpath = "//a[contains(text(),'Attach Welcome Letter')]")
+	public WebElement AttachWelcomeLetter;
+	
+	@FindBy(xpath = "//span[@id='$PpyWorkPage$pWelcomeLetterDetails$pRequestedDateSpan']//img[contains(@class,'inactvIcon')]")
+	public WebElement RequestedDate;               
+
+	@FindBy(xpath = "//span[@id='$PpyWorkPage$pWelcomeLetterDetails$pWLReceivedDateSpan']//img[contains(@class,'inactvIcon')]")
+	public WebElement ReceivedDate;
+
+	@FindBy(xpath = "//span[@id='$PpyWorkPage$pWelcomeLetterDetails$pCompletionDateSpan']//img[contains(@class,'inactvIcon')]")
+	public WebElement CompletionDate;
+	
+	
 	
 	public TaskCompletionPage()
 	{
@@ -411,7 +438,7 @@ public class TaskCompletionPage extends TestBase{
 		EquipmentMargin.sendKeys("123");
 		Thread.sleep(3000);
 		Submit.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		/*
         String IntialdeliveryDate=iTDD.getText();
         log.info("IntialdeliveryDate:::"+IntialdeliveryDate);
@@ -452,15 +479,15 @@ public class TaskCompletionPage extends TestBase{
 	}
 	public void validateVBSOrder() throws InterruptedException
 	{
-		Thread.sleep(10000);
+		//Thread.sleep(10000);
 		windowhelper.switchToParentWindow();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 20);
 		VBSMargin.sendKeys("123");
 		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(5000);
-		Submit.click();// submit for revise TDD
-		Thread.sleep(3000);
+		//Submit.click();// submit for revise TDD
+		//Thread.sleep(3000);
 	}
 	public void validateERSVBSOrder() throws InterruptedException
 	{
@@ -488,7 +515,7 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(3000);
 		Submit.click();
 		Thread.sleep(5000);
-		Submit.click();
+		//Submit.click();
 	}
 	
 	public void validateEAMManaged() throws InterruptedException	//new function added
@@ -594,10 +621,13 @@ public class TaskCompletionPage extends TestBase{
 	{
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);
 		CoBrandEnrollmentTask.click();
+		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);
+		Thread.sleep(5000);
 		Submit.click();
 		driver.switchTo().defaultContent();
+		Thread.sleep(5000);
 		Close2.click();
 		Thread.sleep(3000);
 	}
@@ -1032,13 +1062,13 @@ public class TaskCompletionPage extends TestBase{
 		VendorName.sendKeys("CISCO");
 		Thread.sleep(10000);
 		VendorRef.sendKeys("123");
-		Thread.sleep(10000);
+		Thread.sleep(2000);
 		ServiceContract.sendKeys("566");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		setCurrentDate(Date1);
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 		setCurrentDate(Date2);
-		Thread.sleep(10000);
+		Thread.sleep(2000);
 		Submit.click();
 		Thread.sleep(10000);
 		driver.switchTo().defaultContent();
@@ -1064,7 +1094,7 @@ public class TaskCompletionPage extends TestBase{
 		Thread.sleep(7000);
 		driver.switchTo().defaultContent();
 		Close2.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 	
 	public void ContractUploadODMUser() throws ParseException, InterruptedException	//new function added
@@ -1124,8 +1154,9 @@ public class TaskCompletionPage extends TestBase{
 		Submit.click(); 
 		//Thread.sleep(3000);
 		//Submit.click(); 
-		Thread.sleep(10000);
+		Thread.sleep(7000);
 		Submit.click();
+		Thread.sleep(5000);
 	}
 	
 	public void serviceProcurementOCD() throws InterruptedException	//added by kp
@@ -1174,6 +1205,65 @@ public class TaskCompletionPage extends TestBase{
 		Submit.click();
 		Thread.sleep(5000);
 	}
+	
+    public void validateOrderVendorWelcome() throws InterruptedException
+    {                
+    	Thread.sleep(5000);
+		windowhelper.switchToParentWindow();
+    	//Validateorder.click();                                                    
+    	waithelper.waitForframeToBeAvailableAndSwitchToIt(OF_Frame, 20);                                    
+    	//ValidateOrder.click();                                                    
+    	VendorMargin.sendKeys("123");                                                   
+    	Thread.sleep(2000);                                                   
+    	Submit.click();                                                   
+    	Thread.sleep(10000);                                                
+    }
+    
+    public void WelcomeLetter() throws InterruptedException
+    {                   
+    	waithelper.waitForframeToBeAvailableAndSwitchToIt(C_Frame, 20);                    
+    	AttachWelcomeLetter.click();
+    	Thread.sleep(5000);
+    	driver.switchTo().defaultContent();                    
+    	waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 20);                    
+    	setCurrentDate(RequestedDate);                    
+    	setCurrentDate(ReceivedDate);                    
+    	setCurrentDate(CompletionDate);
+    	IsPODAttachedEPtrue.click();                    
+    	Thread.sleep(5000);                    
+    	//javascripthelper.scrollIntoView(DownButton);                    
+    	//javascripthelper.clickElement(DownButton);                    
+    	//Thread.sleep(10000);                    
+    	//javascripthelper.scrollUpVertically();                    
+    	AttachWelcomeletter.click();                    
+    	Thread.sleep(3000);                    
+    	javascripthelper.scrollIntoView(AddButton);                    
+    	Thread.sleep(5000);                    
+    	javascripthelper.scrollUpVertically();                    
+    	Thread.sleep(3000);                    
+    	//javascripthelper.clickElement(AddButton);                    
+    	//AddButton.click();                    
+    	waithelper.WaitForElementVisibleWithPollingTime(AddButton, 30, 10);                    
+    	AddButton.click();                    
+    	((JavascriptExecutor)driver).executeScript("arguments[0].checked = true;", AddButton);                   
+    	//dropdownhelper.moveTillSubTaskandClick(AddButton,Attach);                    
+    	Thread.sleep(10000);                    
+    	Attach.click();                    
+    	Thread.sleep(10000);                    
+    	//FileName.click();                    
+    	//Thread.sleep(10000);                    
+    	FileName.sendKeys(TestPDF);                    
+    	Thread.sleep(3000);                  
+    	dropdownhelper.selectUsingVisibleText(Category, "PDF");                    
+    	Thread.sleep(2000);                    
+    	ModalSubmit.click();                    
+    	Thread.sleep(10000);                    
+    	//otherActions.click();                    
+    	//Thread.sleep(15000);                    
+    	Submit.click();
+    	Thread.sleep(6000);
+    	//driver.switchTo().defaultContent();
+    }
 	
 	public void checkCloseTasks() throws IOException
 	{

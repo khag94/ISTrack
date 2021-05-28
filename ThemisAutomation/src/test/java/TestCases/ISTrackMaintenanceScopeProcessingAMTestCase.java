@@ -87,7 +87,7 @@ public class ISTrackMaintenanceScopeProcessingAMTestCase extends TestBase {
 	}
 	
 	@Test(priority=1)
-	public void newCaseGeneration() throws Throwable
+	public void newCaseGenerationISTrack() throws Throwable
 	{
 		log.info("################### Start login in IS Track Application ###################");
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
@@ -145,6 +145,7 @@ public class ISTrackMaintenanceScopeProcessingAMTestCase extends TestBase {
 		log.info("################### Start Validate Order ###################");
 		taskcompletionpage.validateOnlineIntervention();
 		log.info("################### End Validate Order ###################");
+		
 		myworkpage.logOff();
 	}
 	
@@ -157,25 +158,26 @@ public class ISTrackMaintenanceScopeProcessingAMTestCase extends TestBase {
 		goldorderstatuscheckpage.statusCheck("Manage");
 		goldorderstatuscheckpage.checkTOS_APD();
 		goldorderstatuscheckpage.checkReviseTDD();
-	}
+	}	
 	
 	@Test(priority=3)
-	public void taskCompletionWithProcurementUser() throws InvalidFormatException, IOException, Throwable
+	public void taskCompletionByProcurementUser() throws InvalidFormatException, IOException, Throwable
 	{	
-		istrackloginpage.Login(prop.getProperty("username_ISTrack1"), prop.getProperty("password_ISTrack1"));
-				
-		log.info("######################### Start Completing Co brand enrollment task ####################");
+		istrackloginpage.Login(prop.getProperty("username_ISTrack1"), prop.getProperty("password_ISTrack"));
 		taskcompletionpage.searchCase();
-		taskcompletionpage.coBrandEnrollment();
+		
+		log.info("######################### Start Completing Co brand enrollment task ####################");
+		taskcompletionpage.coBrandEnrollment();		
 		log.info("######################### End Completing Co brand enrollment task ####################");
 		
-		log.info("######################### Start Completing engage pocm task ####################");
 		taskcompletionpage.searchCase();
+		
+		log.info("######################### Start Completing engage pocm task ####################");
 		taskcompletionpage.engagePOCMTask();
 		log.info("######################### End Completing engage pocm task ####################");
 		
 		myworkpage.logOff();
-	}	
+	}
 	
 	
 	@Test(priority=4)
@@ -231,7 +233,7 @@ public class ISTrackMaintenanceScopeProcessingAMTestCase extends TestBase {
 	}
 	
 	@Test(priority=8)
-	public void acceptanceIS() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	public void acceptanceISByODMUserISTrack() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		istrackloginpage.Login(prop.getProperty("username_ISTrack"), prop.getProperty("password_ISTrack"));
 		log.info("######################### Start Completing acceptanceIS task ####################");
@@ -241,10 +243,12 @@ public class ISTrackMaintenanceScopeProcessingAMTestCase extends TestBase {
 	
 		myworkpage.logOff();
 	}
+	
+	
 	@Test(priority=9)
 	public void checkRFS_RFBACheckinGold() throws EncryptedDocumentException, InvalidFormatException, InterruptedException, IOException
 	{
-		guardianloginpage.Login(prop.getProperty("username1"), prop.getProperty("password1"));
+		guardianloginpage.Login(prop.getProperty("username"), prop.getProperty("password"));
 		guardianhomepage.launch_ApplicationFromGuardian(guardianhomepage.GoldUAT);
 		goldorderpage.searchOrderForStatus();
 		goldorderstatuscheckpage.checkRFS_RFB();
@@ -285,7 +289,7 @@ public class ISTrackMaintenanceScopeProcessingAMTestCase extends TestBase {
 		myworkpage.logOff();
 	}	*/
 	
-	@Test(priority=13)
+	@Test(priority=11)
 	public void checkGoldOrderAcceptanceStatus() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		guardianloginpage.Login(prop.getProperty("username"), prop.getProperty("password"));

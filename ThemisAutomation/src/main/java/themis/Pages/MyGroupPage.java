@@ -286,11 +286,12 @@ public class MyGroupPage extends TestBase{
 		Thread.sleep(5000);
 		EquipmentProcureMentTask.click();
 		Thread.sleep(60000);
-	/*	driver.switchTo().defaultContent();
+		driver.switchTo().defaultContent();
 		waithelper.waitForframeToBeAvailableAndSwitchToIt(EP_Frame, 10);
-		Thread.sleep(18000);
-		OtherActions.click();
-	
+		Thread.sleep(20000);
+		
+	/*	OtherActions.click();
+		Thread.sleep(3000);
 		RejectResolved.click();
 		Thread.sleep(3000);
 		dropdownhelper.selectUsingVisibleText(ReassignReason,"Invalid issue");

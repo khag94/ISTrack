@@ -92,8 +92,11 @@ public class MyWorkPage extends TestBase{
 	@FindBy(xpath = "//a[contains(text(),'ContractUpload')]")
 	public WebElement ContractUploadTask;
 	
-	@FindBy(xpath = "//a[contains(text(),'OnsiteIntervention')]")
+	@FindBy(xpath = "//a[contains(text(),'OnsiteIntervention')]")	
 	public WebElement OnsiteInterventionTask;
+	
+	@FindBy(xpath = "//a[contains(text(),'WelcomeLetter')]")	//	new added
+	public WebElement WelcomeLetterTask;
 	
 	//@FindBy(xpath = "//input[contains(@id,'SelectedTask2')]")
 	@FindBy(xpath = "//td[contains(@class,'wrapText')]//div[contains(@class,'oflowDivM')]//input[@id='SelectedTask2']")
@@ -406,12 +409,12 @@ public class MyWorkPage extends TestBase{
 	{
 		String Task2=verificationhelper.getText(ServiceProcurementTask);
 		log.info("Task Captured from IS Track Application in My work tab "+Task2);
-		ThirdRowCheckBox.click();
+		FourthRowCheckBox.click();
 		Thread.sleep(3000);		
 				
 		String Task5=verificationhelper.getText(TrackSupplierDeliveryServiceTask);
 		log.info("Task Captured from IS Track Application in My work tab "+Task5);
-		FourthRowCheckBox.click();
+		ThirdRowCheckBox.click();
 		Thread.sleep(3000);		
 	}
 	
@@ -419,13 +422,31 @@ public class MyWorkPage extends TestBase{
 	{
 		String Task2=verificationhelper.getText(ContractUploadTask);
 		log.info("Task Captured from IS Track Application in My work tab "+Task2);
-		FifthRowCheckBox.click();
-		Thread.sleep(3000);		
+		SecondRowCheckBox.click();
+		Thread.sleep(3000);	
 				
 		String Task5=verificationhelper.getText(ServiceProcurementTask);
 		log.info("Task Captured from IS Track Application in My work tab "+Task5);
 		ThirdRowCheckBox.click();
-		Thread.sleep(3000);		
+		Thread.sleep(3000);	
+	}
+	
+	public void captureTaskNamesMaintenancePlusOnsiteInterventionAndSelectCheckBox() throws InterruptedException
+	{
+		String Task1=verificationhelper.getText(OnsiteInterventionTask);
+		log.info("Task Captured from IS Track Application in My work tab "+Task1);
+		FourthRowCheckBox.click();
+		Thread.sleep(3000);	
+				
+		String Task2=verificationhelper.getText(ServiceProcurementTask);
+		log.info("Task Captured from IS Track Application in My work tab "+Task2);
+		ThirdRowCheckBox.click();
+		Thread.sleep(3000);
+		
+		String Task3=verificationhelper.getText(ContractUploadTask);
+		log.info("Task Captured from IS Track Application in My work tab "+Task3);
+		SecondRowCheckBox.click();
+		Thread.sleep(3000);
 	}
 	
 	public void captureTaskNamesERSOrderAndSelectCheckbox() throws InterruptedException
@@ -488,14 +509,14 @@ public class MyWorkPage extends TestBase{
 		String Task2 = verificationhelper.getText(EquipmentProcurementTask);
 		log.info("Task Captured fom IS Track Application in My Work tab " + Task2);
 		//EquipmentProcurementCheckBox.click();
-		FourthRowCheckBox.click();
+		SecondRowCheckBox.click();
 		log.info("Clicked on Equipment Procurement Chechkbox");
 		Thread.sleep(5000);
 		
 		String Task3 = verificationhelper.getText(TrackSupplierDeliveryServiceTask);
 		log.info("Task Captured fom IS Track Application in My Work tab " + Task3);
 		//TrackSupplierDeliveryServiceCheckBox.click();
-		SecondRowCheckBox.click();
+		SixthRowCheckBox.click();
 		log.info("Clicked on Track Supplier Delivery Service CheckBox");
 		Thread.sleep(5000);
 		
@@ -504,7 +525,7 @@ public class MyWorkPage extends TestBase{
 		log.info("Task Captured from IS Track Application in My Work Tab" + Task4);
 		Thread.sleep(5000);
 		//WarehouseStagingCheckBox.click();
-		EightRowCheckBox.click();
+		FourthRowCheckBox.click();
 		log.info("Clicked on Warehouse Staging Task Chechkbox");
 		Thread.sleep(5000);
 		
@@ -512,7 +533,7 @@ public class MyWorkPage extends TestBase{
 		log.info("Task Captured from IS Track Application in My Work Tab" + Task5);
 		Thread.sleep(5000);
 		//TrackSupplierDeliveryCheckBox.click();
-		SeventhRowCheckBox.click();
+		FifthRowCheckBox.click();
 		log.info("Clicked on TrackSupplier Delivery Task Chechkbox");
 		Thread.sleep(5000);
 		
@@ -520,7 +541,7 @@ public class MyWorkPage extends TestBase{
 		log.info("Task Captured from IS Track Application in My Work Tab" + Task6);
 		Thread.sleep(5000);
 		//TrackWareHouseDeliveryCheckBox.click();
-		ThirdRowCheckBox.click();
+		SeventhRowCheckBox.click();
 		log.info("Clicked on Warehouse Staging Task Chechkbox");
 		Thread.sleep(5000);
 	}
@@ -630,6 +651,45 @@ public class MyWorkPage extends TestBase{
 		ThirdRowCheckBox.click();
 		log.info("Clicked on Equipment Procurement Chechkbox");
 	}
+	 
+	public void captureTaskNamesAndSelectCheckBoxVBS_WL() throws InterruptedException	//new added
+	{
+		String Task1 = verificationhelper.getText(TrackSupplierDeliveryServiceTask);
+		log.info("Task Captured from IS Track Application in My Work Tab " + Task1);
+		Thread.sleep(5000);
+		FifthRowCheckBox.click();
+		
+		String Task2 = verificationhelper.getText(WelcomeLetterTask);
+		log.info("Task Captured from IS Track Application in My Work Tab " + Task2);
+		Thread.sleep(5000);
+		FourthRowCheckBox.click();
+		log.info("Clicked on WelcomeLetter Chechkbox");
+		
+		String Task3 = verificationhelper.getText(ServiceProcurementTask);
+		log.info("Task Captured from IS Track Application in My Work Tab " + Task3);
+		Thread.sleep(5000);
+		SixthRowCheckBox.click();
+		log.info("Clicked on Service Procurement Chechkbox");
+	}
+	
+	public void captureTaskNamesAndSelectCheckBoxOnsiteIntervention() throws InterruptedException
+	{
+		String Task1 = verificationhelper.getText(OnsiteInterventionTask);
+		log.info("Task Captured from IS Track Application in My Work Tab " + Task1);
+		Thread.sleep(5000);
+		SecondRowCheckBox.click();
+		log.info("Clicked on OnsiteIntervention Chechkbox");
+	}
+	
+	 public void logOffSRT() throws InterruptedException
+     {
+		 driver.switchTo().defaultContent();
+         MyWork.click();
+         Thread.sleep(6000);
+         LogOff.click();
+         Thread.sleep(3000);
+     }
+
 		
 	public void reassignTask() throws InterruptedException
 	{

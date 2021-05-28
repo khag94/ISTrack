@@ -226,11 +226,12 @@ public class AllWorkPage extends TestBase{
 		reuse.checkColumnNamesAndCount(AllWorkTable);
 		}
 		
-	public void checkColumnNamesAndCount_new() throws IOException
+	public void checkColumnNamesAndCount_new() throws IOException, InterruptedException
 	{
-		
+		Thread.sleep(5000);
 		reuse.takeScreenshot("AllWorkColumns/column_names");
 		reuse.checkColumnNamesAndCount(AllWorkTableNew);
+		Thread.sleep(10000);
 		}
 	
 	public void compareColumnNames_odmuser_new()

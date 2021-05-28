@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test8</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu May 06 10:59:29 IST 2021</td>
+<td>Started on:</td><td>Tue May 11 17:36:41 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>36 seconds (36347 ms)</td>
+<tr><td>Total time:</td><td>1236 seconds (1236616 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,108 +68,44 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.newCaseGeneration()'><b>newCaseGeneration</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Unable to convert: {actions=[org.openqa.selenium.interactions.Sequence@67ec8477]}
-	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:77)
-	at org.openqa.selenium.json.Json.toJson(Json.java:60)
-	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:228)
-	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:118)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:154)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:667)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.perform(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.perform(EventFiringWebDriver.java:335)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:594)
-	at themis.Util.DropDownHelper.MoveToTaskandClick(DropDownHelper.java:77)
-	at themis.Pages.CreateCasePage.createNewCase(CreateCasePage.java:84)
-	at TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.newCaseGeneration(ISTrackEAMManagedWithoutCheckBoxAMTestCase.java:106)
+<td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.AutomaticReport()'><b>AutomaticReport</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
+<td><div><pre>com.sun.mail.smtp.SMTPSendFailedException: 554 Mail from parminder.kaur@orange.com rejected for policy reasons.
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2108)
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1609)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1117)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at themis.Util.AutoGenerateMail.GenerateMail(AutoGenerateMail.java:273)
+	at TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.AutomaticReport(ISTrackEAMManagedWithoutCheckBoxAMTestCase.java:75)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.WebDriverException: Unable to convert: {actions=[org.openqa.selenium.interactions.Sequence@67ec8477]}
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:96)
-	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:74)
-	... 47 more
-Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: EventFiringWebDriver
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:198)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:146)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:134)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:94)
-	... 48 more
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:181)
-	... 51 more
-Caused by: org.openqa.selenium.WebDriverException: Failed to convert data to an object
-Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2656, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 24612519-f71e-41d9-8f90-c0b100efce19
-*** Element info: {Using=xpath, value=//td[@valign=&apos;middle&apos;][contains(.,&apos;New&apos;)]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:186)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:203)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:154)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
-	... 56 more
-... Removed 46 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace761680655", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace761680655'><pre>org.openqa.selenium.WebDriverException: Unable to convert: {actions=[org.openqa.selenium.interactions.Sequence@67ec8477]}
-	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:77)
-	at org.openqa.selenium.json.Json.toJson(Json.java:60)
-	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:228)
-	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:118)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:154)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:667)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.perform(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.perform(EventFiringWebDriver.java:335)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:594)
-	at themis.Util.DropDownHelper.MoveToTaskandClick(DropDownHelper.java:77)
-	at themis.Pages.CreateCasePage.createNewCase(CreateCasePage.java:84)
-	at TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.newCaseGeneration(ISTrackEAMManagedWithoutCheckBoxAMTestCase.java:106)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1146318308", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1146318308'><pre>com.sun.mail.smtp.SMTPSendFailedException: 554 Mail from parminder.kaur@orange.com rejected for policy reasons.
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2108)
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1609)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1117)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at themis.Util.AutoGenerateMail.GenerateMail(AutoGenerateMail.java:273)
+	at TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.AutomaticReport(ISTrackEAMManagedWithoutCheckBoxAMTestCase.java:75)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:764)
 	at org.testng.TestRunner.run(TestRunner.java:585)
@@ -186,142 +122,41 @@ Session ID: 24612519-f71e-41d9-8f90-c0b100efce19
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.WebDriverException: Unable to convert: {actions=[org.openqa.selenium.interactions.Sequence@67ec8477]}
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:96)
-	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:74)
-	... 47 more
-Caused by: org.openqa.selenium.WebDriverException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: EventFiringWebDriver
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:198)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:146)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:134)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:94)
-	... 48 more
-Caused by: java.lang.reflect.InvocationTargetException
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:181)
-	... 51 more
-Caused by: org.openqa.selenium.WebDriverException: Failed to convert data to an object
-Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2656, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 24612519-f71e-41d9-8f90-c0b100efce19
-*** Element info: {Using=xpath, value=//td[@valign=&apos;middle&apos;][contains(.,&apos;New&apos;)]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:186)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:203)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:154)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
-	... 56 more
 </pre></div></td>
-<td>29</td>
+<td>86</td>
+<td>TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase@413d1baf</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.acceptanceIS()'><b>acceptanceIS</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
+<td></td>
+<td>180</td>
 <td>TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase@413d1baf</td></tr>
 <tr>
 <td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.newCaseGeneration()'><b>newCaseGeneration</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2656, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 24612519-f71e-41d9-8f90-c0b100efce19
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:343)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.getScreenshotAs(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.getScreenshotAs(EventFiringWebDriver.java:285)
-	at themis.Report.TestListener.onTestFailure(TestListener.java:74)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1500588149", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1500588149'><pre>org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: &apos;3.10.0&apos;, revision: &apos;176b4a9&apos;, time: &apos;2018-03-02T19:03:16.397Z&apos;
-System info: host: &apos;KHAGENDRAP-LP&apos;, ip: &apos;10.225.2.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.8.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210217034806, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2656, moz:profile: C:\Users\khagendra.prasad\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 24612519-f71e-41d9-8f90-c0b100efce19
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:343)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:103)
-	at com.sun.proxy.$Proxy14.getScreenshotAs(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.getScreenshotAs(EventFiringWebDriver.java:285)
-	at themis.Report.TestListener.onTestFailure(TestListener.java:74)
-	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:96)
-	at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:220)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:657)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>36</td>
+<td></td>
+<td>292</td>
+<td>TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase@413d1baf</td></tr>
+<tr>
+<td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.pocmSupervisor()'><b>pocmSupervisor</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
+<td></td>
+<td>76</td>
+<td>TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase@413d1baf</td></tr>
+<tr>
+<td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.pocmUser1()'><b>pocmUser1</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
+<td></td>
+<td>40</td>
+<td>TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase@413d1baf</td></tr>
+<tr>
+<td title='TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase.taskCompletionByProcurementUser()'><b>taskCompletionByProcurementUser</b><br>Test class: TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase</td>
+<td></td>
+<td>531</td>
 <td>TestCases.ISTrackEAMManagedWithoutCheckBoxAMTestCase@413d1baf</td></tr>
 </table><p>
 </body>
